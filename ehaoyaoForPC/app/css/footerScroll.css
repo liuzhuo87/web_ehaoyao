@@ -1,0 +1,23 @@
+/* footer -> scrollView */
+.footer-scroller{background: #ffffff;border-top:.01rem solid #eaeaea;
+}
+.footer-scroller .text{
+    height: .5rem;
+    line-height: .5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: inline-block;
+    background: rgba(21, 37, 53, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 0 .40rem;
+    box-sizing: border-box;
+    border-radius: 0 0 .36rem .36rem;
+}
+.udf_scroller {
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}

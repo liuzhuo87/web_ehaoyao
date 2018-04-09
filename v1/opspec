@@ -1,0 +1,62 @@
+-- vim: set ft=lua:
+-- Jarvis openlight spec file
+-- op: ruleVersion=v1
+-- 该文件定义了如下构建目标
+--
+--  web                     构建前端
+--  dockerimage             前端镜像
+--
+
+build=require("build")
+
+pkg=build.package({
+    name="AI Doctor H5 Web",
+    author="lianjianqiang",
+    url="https://github.com/datamiller/aidoctor",
+    })
+
+pkg:options():set("defaultTargets", { "web" })
+
+--
+--  Target: web
+--  构建前端
+--
+
+webTarget=build.CommandTarget.new({
+    command="webpack",
+    args={
+        "--config",
+        "webpack.config.prod.js",
+        "--output-path",
+        "${CI_OUTPUT}",
+        "-p",
+        "--define",
+        "CI_INFO=\"Commit [${CI_COMMIT}] Commit Time[${CI_COMMIT_TIME}] Branch [${CI_BRANCH}] Build Time [${CI_BUILD_TIME}] Tag [${CI_TAG}]\""
+        },
+    envs={
+        "NODE_ENV=production"
+        }
+    })
+webTarget:description("构建前端")
+
+pkg:targets():add("web", webTarget)
+
+--
+--  Target: dockerimage
+--  Docker镜像
+--
+
+dockerImageTarget=build.DockerImageTarget.new({repository="dockerdist.bdmd.com", image="aidoctor-h5", push=true})
+dockerImageTarget:description("Docker镜像")
+
+dockerImageTarget:dependent(build.TargetDependency.new({target="web", build=true}))
+
+-- Basic config
+dockerImageTarget:from("dockerdist.bdmd.com/openweb:latest")
+dockerImageTarget:label("Name", "\"AI Doctor H5 Web\"")
+dockerImageTarget:label("Description", "\"AI Doctor H5 Web\"")
+-- Add files
+dockerImageTarget:add(build.Artifact.new({target="web"}), "/var/lib/rxthinking.com/ai-doctor-h5/web")
+dockerImageTarget:add(build.File.new({filename="config"}), "/etc/rxthinking.com/ai-doctor-h5")
+
+pkg:targets():add("dockerimage", dockerImageTarget)

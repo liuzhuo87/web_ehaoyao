@@ -1,0 +1,119 @@
+.medical-style {
+    background-color: #ffffff;
+    height: 100%;
+}
+.disease-area{
+    /*position: relative;*/
+    /*left:0;*/
+    /*right:0;*/
+    /*display:flex;*/
+    /*flex-direction:column;*/
+    overflow:auto;
+    -webkit-overflow-scrolling: touch; }
+.disease-area>div:first-child{width:100%;}
+/*.disease-area>div:first-child{width:100%;height: 2rem;}*/
+.disease-area>div:first-child .disease-name{font-size: .54rem;padding-top: .2rem;padding-left: 20px;font-weight: bold}
+.disease-area>div:first-child .cue{background-color: #FEF3E9;color: #F58B23; padding: 8px 20px;font-size: 0.22rem;}
+.disease-area .cause-disease{
+    /*height:99%;*/
+    /*overflow-y:auto;*/
+}
+.disease-area .title{
+    border-bottom:1px solid #dddddd;
+    color: #41B8B0;
+    font-size: 0.34rem;
+    padding-left: 0.36rem;
+    padding-bottom:.29rem;
+    margin-top:.35rem}
+.disease-area .cause-disease-medical{
+    margin: 0.16rem 0.36rem;
+    height: 32%;
+    padding-top: 0;}
+.disease-area .symptom-disease{
+    /*height:200px*/
+}
+.disease-area .medical-price{
+    display: inline-block;
+    margin-top: 10px;
+}
+.disease-area .medical-price table{background: #f5f5f5;float: right;margin-top: 2px;}
+.disease-area .medical-price table td:nth-child(2){width: 26px;text-align:center}
+.disease-area .medical-price table td:first-child{text-align: center; width: 20px;border-right:1px solid #E4E4E4}
+.disease-area .medical-price table td:nth-child(3){text-align: center; width: 20px;border-left:1px solid #E4E4E4}
+footer .price-total{
+    /*border: 1px solid #D5D5D5;*/
+    display: flex;
+    justify-content: space-between;
+    line-height: 1rem;
+    background-color: white;
+    box-shadow: 1px 3px 5px 0 #aaa;
+    width: 100%;
+    height: 1rem;
+}
+.myCheckbox{
+    display: none;
+}
+.checkWrap{
+    width:0.38rem;
+    height:0.38rem;
+    display: inline-block;}
+.myCheckbox + label{
+    background-color: white;
+    border-radius: 50%;
+    border:1px solid #d3d3d3;
+    width:0.33rem;
+    height:0.33rem;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0.36rem;
+    color:#ffffff;
+    font-size: 0.22rem;
+}
+.myCheckbox + .icon-approval:before{
+    color:#ffffff;
+}
+
+.myCheckbox:checked + label{
+    background-color: #41B8B0;
+    color: #ffffff;
+    border: none;
+}
+.myCheckbox:checked + label{
+    background-color: #41B8B0;
+    color: #ffffff;
+    border: none;
+}
+.myCheckbox:checked + .icon-approval:before {
+    color: #ffffff;
+ }
+.imgContent {
+    width: 1.68rem;
+    height: 1.6rem;
+    overflow: hidden;
+    position: relative;
+}
+.imgContent img{
+   width:100%;
+    height:100%
+}
+.medical-name{display: inline-block;vertical-align: middle;width: 59%;
+    margin-left: .38rem;}
+.medical-price{display: inline-block;vertical-align: top;width: 100%;  }
+.triangle-up{
+    position: absolute;
+    top: -0.15rem;
+    left: 0.7rem;
+    width: 0;
+    height: 0;
+    border-left: .14rem solid transparent;
+    border-right: .14rem solid transparent;
+    border-bottom: .2rem solid #f5f5f5
+}
+.submitToast{
+    padding: 0.5rem 0.5rem;
+    font-size:1rem;
+}
+.submitToast .mint-toast-text{
+    font-size:0.32rem;
+}

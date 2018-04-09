@@ -1,0 +1,243 @@
+.pad40 {
+    padding: 0 .40rem;
+}
+
+.recall {
+    padding:.14rem .1rem;
+    line-height:.40rem;
+    color:#f58b23;
+    background: rgba(245,139,35,.1);
+    display:flex;
+    font-size: .24rem;
+}
+.recall .recall-icon{
+    line-height: .38rem;
+    padding-top:.20rem;
+}
+
+/*权重最高的*/
+.num1 {
+    width: 100%;
+    /*height: 3.6rem;*/
+    /*background: #0d263f;*/
+    /*padding: .50rem;*/
+    margin-top:.2rem;
+    margin-bottom:.2rem;
+    box-sizing: border-box;
+}
+.num1>div{
+    box-shadow: rgba(13, 38, 63, 0.08) 0 2px 6px 2px;
+    padding:.28rem .2rem;
+    background: #fff;
+    border-radius: .10rem;
+}
+
+.num1 .disease {
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0;
+}
+
+.num1 .disease .describe {
+    width: 4rem;
+    /*padding-top: .20rem;*/
+}
+
+.num1 .disease .describe .name {
+    /*color: #fff;*/
+    font-size: .36rem;
+    font-weight: 900;
+}
+
+.num1 .disease .describe .depName {
+    height: .40rem;
+    line-height: .40rem;
+    border-radius: .20rem;
+    background: rgba(255,47,74,.1);
+    display: inline-block;
+    padding: 0 .20rem;
+    color:#FF2F4A;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: .10rem 0;
+}
+
+.num1 .disease .describe .text {
+    font-size: .24rem;
+    /*color: rgba(255, 255, 255, 0.8);*/
+    /*height: 1rem;*/
+}
+
+.num1 .circle {
+    width: 2rem;
+    height: 2rem;
+}
+
+.num1 .disease .weight {
+    width: 2rem;
+    height: 2rem;
+}
+
+.num1 .disease .weight .text .text-tag {
+    line-height: .30rem;
+    /*color: rgba(255, 255, 255, 0.8);*/
+    font-size: .30rem;
+}
+
+.num1 .disease .weight .text {
+    width: 1.8rem;
+    height: 1.8rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: .1rem;
+    left: .1rem;
+    background: #fff;
+    color: #8C9CFE;
+    font-size: .48rem;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: .62rem;
+}
+
+.num1 .disease .weight .text .text-weight {
+    line-height: .60rem;
+}
+
+.num1 .disease .weight .text .text-tag {
+    line-height: .50rem;
+    /*color: rgba(255, 255, 255, 0.6);*/
+    font-size: .30rem;
+}
+
+.num1 .big-cir, .num1 .cir, .num1 .precent {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.num1 .big-cir {
+    background:#f7f7f7;
+}
+
+.num1 .big-cir .cir .precent, .num1 .big-cir .cir {
+    box-sizing: border-box;
+}
+
+.num1 .big-cir .cir .left {
+    transition: transform ease;
+    border: .16rem solid #8C9CFE;
+    clip: rect(0rem, 1rem, 2rem, 0);
+}
+
+.num1 .big-cir .cir .right {
+    border: .16rem solid #8C9CFE;
+    clip: rect(0, 2rem, 2rem, 1rem);
+}
+
+.num1 .big-cir .cir .wth0, .diseaseWrap .wth0{
+    width: 0;
+}
+
+.num1 .big-cir .cir.cir-clip {
+    clip: rect(0 2rem 2rem 1rem);
+}
+
+.num1 .big-cir .cir.clip-auto {
+    clip: rect(auto, auto, auto, auto);
+}
+
+
+
+
+.diseaseWrap {
+    box-shadow: rgba(13, 38, 63, 0.08) 0 2px 6px 2px;
+    padding: .10rem .20rem;
+    margin-bottom: .20rem;
+    padding-top: .20rem;
+    background: #fff;
+    border-radius: .10rem;
+}
+
+.diseaseWrap .diseaseList {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .18rem;
+}
+.diseaseWrap .diseaseList .weight .text{
+    width:40px;
+    height:40px;
+    box-sizing:border-box;
+    position:absolute;
+    top:3px;
+    left:3px;
+    color:#333;
+    background: #FAFAFA;
+    font-size:12px;
+    border-radius:50%;
+    text-align:center;
+    line-height:40px;
+
+}
+.diseaseWrap .diseaseList .weight .text .text-weight{
+    line-height: 40px;
+}
+.diseaseWrap .diseaseList .weight .text .text-tag{
+    line-height:40px;
+    color:rgba(255,255,255,.6);
+    font-size:12px;
+
+}
+
+.diseaseWrap .big-cir,.cir,.precent{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    position:absolute;
+    background:#f7f7f7;
+}
+
+.diseaseWrap .big-cir .cir .precent{
+    box-sizing: border-box;
+}
+.diseaseWrap .big-cir .cir .left{
+    transition:transform ease;
+    border:6px solid #8C9CFE;
+    clip:rect(0,23px,46px,0);
+}
+.diseaseWrap .big-cir .cir .right{
+    border:6px solid #8C9CFE;
+    clip: rect(0,46px,46px,23px);
+}
+
+
+.diseaseWrap .big-cir .cir.cir-clip{
+    clip: rect(0 46px 46px 23px);
+}
+.diseaseWrap .big-cir .cir.clip-auto{
+    clip:rect(auto,auto,auto,auto);
+}
+
+
+.diseaseWrap .describe {
+    width: 5.0rem;
+    padding-left: 1.2rem;
+}
+
+.diseaseWrap .describe .name {
+    height: .48rem;
+    line-height: .48rem;
+    margin-bottom: 6px;
+    color: rgba(42, 63, 84, 1);
+    font-size: .34rem;
+}
+
+.diseaseWrap .describe .text {
+    height: .66rem;
+    line-height: .33rem;
+    font-size: .24rem;
+    color: rgba(42, 63, 84, 0.5);
+    overflow: hidden;
+}
+
+

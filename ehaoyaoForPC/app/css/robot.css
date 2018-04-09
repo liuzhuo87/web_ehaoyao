@@ -1,0 +1,26 @@
+.robot-icon-putaway .icon-putaway:before {
+    color: #41B8B0;
+}
+.finish{
+    pointer-events: none;
+    color: #999999!important;
+}
+.finish .robot-icon-putaway{
+    color: #999999!important;
+}
+.finish .icon-putaway:before{
+     color: #999999;
+ }
+.toShowMedical .icon-putaway:before{
+    color: #41B8B0;
+}
+.resultModule.imgWrap{
+    background: rgb(74,165,181) url(../images/card_bj.png);
+    height:auto;
+    border-radius: 0 0 0.4rem 0.4rem;
+}
+.resultModule.imgWrap .imgCont{
+   position: static;
+    padding: 0.2rem 0.24rem;
+    padding-bottom: 0.4rem;
+}

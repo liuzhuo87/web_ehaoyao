@@ -1,0 +1,9 @@
+.showMedical td{
+    width:100%;padding:.32rem 0;border-bottom: 1px solid #f0f0f0;
+}
+.showMedical tr:last-child td{
+    border-bottom:none;
+}
+.mint-swipe-indicator.is-active{
+    background: #a9acb1!important;
+}

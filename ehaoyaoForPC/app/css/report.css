@@ -1,0 +1,200 @@
+.pad40 {
+    padding: 0 .40rem;
+}
+
+/* 癌症预警 */
+
+.recall {
+    padding: .14rem;
+    line-height: .40rem;
+    background: #fef3e9;
+    color: #f58b23;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    font-size: .28rem;
+}
+
+.recall .recall-icon {
+    line-height: .38rem;
+    padding-top: .20rem;
+    font-size: .24rem;
+}
+.reportImgWrap{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: rgb(74,165,181);
+    /*border: .02rem solid #41b8b0;*/
+}
+.reportImgWrap .image{
+    width: 100%;
+    height: 100%;
+    display:inline-block;
+    overflow:hidden;
+}
+.imgCont.report{
+    position: relative;
+    z-index: 10;
+}
+/* 第一概率 */
+
+.num1 .disease {
+    width: 100%;
+    /* height: 374rpx; */
+    background-size: 100% 100%;
+    color: #fff;
+    padding: .32rem .48rem;
+    box-sizing: border-box;
+}
+
+/*.num1 .disease .reportImgWrap{*/
+    /*box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
+/*}*/
+
+.num1 .disease .name {
+    font-size: .48rem;
+    margin-bottom: .06rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.num1 .disease .name .icon-unfolded {
+    font-size: .20rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.num1 .disease .weight {
+    font-size: .36rem;
+}
+
+.num1 .disease .middle-area {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.num1 .disease .depName {
+    display: inline-block;
+    vertical-align: middle;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .28rem;
+    background: rgba(42, 63, 84, 0.1);
+    padding: 0 .16rem;
+    border-radius: .28rem;
+    margin: .16rem 0;
+}
+.num1 .disease .view-medical {
+    display: inline-block;
+    vertical-align: middle;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .30rem;
+    padding: 0 .16rem;
+    margin: .16rem 0;
+    background-color: #F57123;
+    border-radius: .32rem;
+    font-size: .28rem;
+}
+.num1 .disease .view-medical .icon-yao{
+    font-size: .24rem;
+    margin-right: 4px;}
+.num1 .disease .view-medical .icon-yao:before {
+    color: #fff;
+}
+
+.num1 .disease .describe, .num1 .disease .drug {
+    font-size: .28rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.num1 .disease .drug {
+    margin: .14rem 0;
+}
+
+/* 疾病列表 list */
+
+.list .titleReport {
+    height: 1.14rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .01rem solid #f3f3f3;
+}
+
+.list .disease {
+    margin-left: .40rem;
+    padding: .40rem .40rem .40rem 0;
+    border-bottom: .01rem solid #f3f3f3;
+}
+
+.list .diseaseTitle {
+    height: .46rem;
+    line-height: .46rem;
+    display: flex;
+    flex-direction: row;
+    color: #3d83b8;
+    margin-bottom: .20rem;
+    font-size: .34rem;
+    justify-content: space-between;
+}
+
+.list .diseaseTitle .weight {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .28rem;
+    padding: 0 .20rem;
+    border-radius: .38rem;
+    border: .02rem solid rgba(61, 131, 184, 0.4);
+}
+.list .diseaseTitle .name.ell {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .34rem;
+}
+.list .diseaseTitle .view-medical {
+    font-size: .28rem;
+    color:#F57123;
+}
+.list .diseaseTitle .icon-yao{
+    font-size: .24rem;
+    margin-right: 4px;}
+.list .diseaseTitle .view-medical .icon-yao:before {
+    color: #F57123;
+}
+.list .drug {
+    font-size: .28rem;
+    color: rgba(42, 63, 84, 0.5);
+    margin: .14rem 0;
+}
+
+.list .describe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: .28rem;
+}
+
+.list .describe .text {
+    width: 92%;
+    color: rgba(42, 63, 84, 0.5);
+}
+
+.list .describe .icon {
+    width: 8%;
+    text-align: center;
+    color: rgba(42, 63, 84, 0.3);
+}
+.positR { position:relative;bottom:-3px }
+.icon-unfolded:before{color:#fff}
+.list .icon-unfolded:before{color:#999899;}
+

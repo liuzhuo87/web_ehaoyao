@@ -1,0 +1,371 @@
+/*用户信息对话框*/
+.userInfoModal .modalMask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(42, 63, 84, 0.8);
+    z-index: 99999;
+}
+.userInfoModal .modalCont{
+    position: fixed;
+    top:1rem;
+    left:.8rem;
+    right:.8rem;
+    background: #fff;
+    z-index: 100000;
+    padding: .2rem .2rem .3rem;
+}
+.userInfoModal .modalCont .inp-wrap{
+    height:.8rem;
+    line-height: .8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border:1px solid #eee;
+    padding:0 .2rem;
+    /*margin-bottom:.3rem;*/
+    border-bottom:none;
+}
+.userInfoModal .modalCont .gender .options{
+    display: flex;
+    flex-direction: row;
+}
+.userInfoModal .modalCont .gender .options .radio-group{
+    width:100%;
+    text-align: right;
+}
+.userInfoModal .modalCont .inp-wrap label:first-child{
+    padding-right:.2rem;
+}
+
+.userInfoModal .modalCont .inp-wrap.age input,
+.userInfoModal .modalCont .inp-wrap.tel input{
+    height:.8rem;
+    width:100%;
+    text-align: right;
+    display: inline-block;
+    font-size:.3rem;
+}
+
+.userInfoModal .modalCont .beginAsk{
+    width: 100%;
+    height: .80rem;
+    line-height: .80rem;
+    text-align: center;
+    margin: .30rem auto 0;
+    color: #fff;
+    font-size: .30rem;
+    background: #FF2F4A;
+    /*box-shadow: rgba(65,184,176,.5) 0 0.06rem 0.12rem 0;*/
+}
+
+/*----------底部栏----------*/
+#inquiryFooter{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    font-size: .28rem;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    z-index: 99;
+    max-width: 1024px;
+}
+#inquiryFooter .footer-btn{
+    /*width: 100%;*/
+    height:1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+#inquiryFooter .footer-btn div{
+    width: 33%;
+    height: 1rem;
+    line-height: 1rem;
+    color: #666;
+    text-align: center;
+    font-size: .30rem;
+}
+#inquiryFooter .footer-btn .span{
+    color: #333;
+}
+#inquiryFooter .options-wrap{
+    transition: .4s;
+    overflow: hidden;
+    position: relative;
+}
+#inquiryFooter .options-wrap .loading{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    padding-top:.60rem;
+    text-align: center;
+    background:rgba(255,255,255,.6);
+}
+#inquiryFooter .options{
+    width:100%;
+    max-height: 2.30rem;
+    line-height: .76rem;
+    padding:.20rem;
+    color: #2A3F54;
+    font-size:.32rem;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+#inquiryFooter .options .option-list{
+    width: 29%;
+    /*height: .80rem;*/
+    text-align: center;
+    margin:0 2% 4%;
+    /*padding: 0 .20rem;*/
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+#inquiryFooter .options .option-list.selected{
+    color:#FF2F4A;
+    border-color:#FF2F4A;
+    font-weight:bold;
+
+}
+#inquiryFooter .options .triangle,
+#inquiryFooter .options .icon{
+    display: none;
+}
+#inquiryFooter .options .tri-icon{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background:url('../images/x1.svg') no-repeat;
+}
+#inquiryFooter .options .tri-icon image{
+    display: inline;
+}
+
+#inquiryFooter .options .option-list.selected .triangle{
+    width: 0;
+    height: 0;
+    border-top: .34rem solid transparent;
+    border-right: .36rem solid #FF2F4A;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+}
+#inquiryFooter .options .option-list.selected .icon{
+    color:#fff;
+    position:absolute;
+    bottom:.05rem;
+    right:.05rem;
+    z-index:10;
+    display:block;
+    height:.15rem;
+    font-size:.14rem;
+
+
+}
+
+#inquiryFooter .submit{
+    width: 100%;
+    line-height: .80rem;
+    position: absolute;
+    bottom: 0;
+    font-size: .32rem;
+    text-align:center;
+    background: #fff;
+    transition: .4s;
+    border-top: 1px solid #eee
+}
+#inquiryFooter .submit.show{
+    height: .80rem;
+}
+#inquiryFooter .submit.hide{
+    height: 0;
+}
+#inquiryFooter .submit .without-sel{
+    width: 70%;
+}
+#inquiryFooter .submit .submitBtn{
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    background: #FF2F4A;
+}
+#inquiryFooter .submit .submitBtn.disabled{
+    background: #999;
+}
+
+
+/*----------诊断结果卡片----------*/
+.diagnoseCard{
+    padding-left:.24rem;
+    margin-top:.40rem;
+
+}
+.diagnoseCard .cardList{
+    width: 4.82rem;
+    /*height:470rem;*/
+    border-radius: .10rem;
+    box-shadow: rgba(0,0,0,.1) 0 4px 16px 4px;
+}
+.diagnoseCard .cardList .result{
+    padding:.30rem;
+    border-bottom: 1px solid rgba(42,63,84,.06);
+}
+.diagnoseCard .cardList .result .weight{
+    font-size: .96rem;
+    color: #2A3F54;
+    font-weight: 700;
+}
+.diagnoseCard .cardList .result .diseaseName{
+    height:.50rem;
+    line-height:.50rem;
+    margin-bottom:.30rem;
+    font-size: .36rem;
+    font-weight: 900;
+    color: #2A3F54;
+    display: flex;
+    justify-content:space-between;
+}
+.diagnoseCard .cardList .result .department{
+    line-height: .50rem;
+    display: flex;
+    color:#2A3F54;
+}
+.diagnoseCard .cardList .result .department .depName{
+    color:#FF2F4A;
+    display:inline-block;
+    /*height:2em;*/
+    background:rgba(255,47,74,.1);
+    padding:0 .20rem;
+    border-radius:.50rem;
+    margin:0 .10rem;
+    font-weight: 700;
+}
+
+
+.diagnoseCard .cardList .suggest{
+    padding:0rem .30rem;
+    height:1rem;
+    line-height:1rem;
+    font-size:.30rem;
+    color:#2A3F54;
+    display: flex;
+    justify-content: space-between;
+
+}
+.diagnoseCard .cardList .suggest .dot{
+    display:inline-block;
+    width:.34rem;
+    height:.34rem;
+    line-height:.22rem;
+    border-radius:50%;
+    background:#8C9CFE;
+    color:#fff;
+    margin-right:.20rem;
+    text-align:center;
+    margin-top:.32rem;
+
+}
+
+/*----------化验列表----------*/
+#labItem-modal{
+    width:100%;
+    position:fixed;
+    top:0.88rem;
+    bottom: 0;
+    z-index:100;
+    background:#fff;
+    transition: .4s;
+}
+
+#labItem-modal .scroll-wrap{
+    position:absolute;
+    width:100%;
+    bottom:1rem;
+    top:0;
+}
+#labItem-modal .scroll-wrap .scrollView{
+    width:100%;
+    height:100%;
+    overflow: auto;
+}
+
+#labItem-modal .options{
+    margin-bottom:.20rem;
+    padding: 0 .40rem;
+}
+#labItem-modal .options .stem{
+    line-height:.56rem;
+    font-size:.30rem;
+    margin-bottom:.20rem;
+}
+#labItem-modal .options label{
+    min-width:40%;
+    display:inline-block;
+    margin-bottom:.22rem;
+}
+#labItem-modal .btn-group{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #EEF0F2;
+    color: #333;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    font-size: .32rem;
+}
+#labItem-modal .btn-group>div{
+    width: 49%;
+    box-sizing: border-box;
+}
+
+#labItem-modal.show{
+    animation: labModalShow .3s forwards
+}
+#labItem-modal.hide{
+    animation: labModalHide .3s forwards
+}
+
+@keyframes labModalShow {
+    0%{
+        /*height: 0;*/
+        top: 100%;
+        margin-bottom: 0;
+    }
+    100%{
+        /*height: 100%;*/
+        top: .88rem;
+        margin-bottom: 0;
+    }
+}
+
+
+@keyframes labModalHide {
+    0%{
+        /*height: 100%;*/
+        top: .88rem;
+        margin-bottom: 1rem;
+    }
+    100%{
+        /*height: 0;*/
+        top: 100%;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,18 @@
+session:
+  prefix: x-token-aidoctor-h5-
+web:
+  routes:
+  - path: /
+    protected: true
+    routeMode: local
+    localRoute:
+      index: index.html
+      cache:
+        option: no-cache
+  - path: /js/sdk.js
+    routeMode: local
+    localRoute:
+      path: js/sdk.js
+      cache:
+        option: no-cache
+

@@ -1,0 +1,16 @@
+.detailed-list #topNav {
+    background-color: #ffffff;
+}
+.address-list{
+    position: relative;
+    top:1rem;
+    left:0;
+    right:0;
+    display:flex;
+    background-color: #fff;
+    height: 2rem;
+    /*overflow:auto;*/
+    /*-webkit-overflow-scrolling: touch;*/
+}
+.address-list>span:first-child{flex:5;display: inline-block;vertical-align: middle;border:1px solid red}
+.address-list>span:nth-child(2){flex:1;display: inline-block;vertical-align: middle;border:1px solid green}

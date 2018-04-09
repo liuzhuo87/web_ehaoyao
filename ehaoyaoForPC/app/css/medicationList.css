@@ -1,0 +1,14 @@
+.icon-unfolded:before {
+    content: "\e926";
+    color: #999899;
+}
+table{background: #eee;float: right;margin-top: 2px;}
+table td:first-child{text-align: center; width: 20px;border-right:1px solid #E4E4E4}
+table td:nth-child(3){text-align: center; width: 20px;border-left:1px solid #E4E4E4}
+.mint-msgbox-message {
+    text-align: left!important;
+     line-height: 0.47rem!important;
+}
+.mint-msgbox-cancel {
+    font-size: 0.3rem!important;
+}

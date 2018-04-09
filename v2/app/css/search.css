@@ -1,0 +1,57 @@
+/*症状搜索框*/
+.search {
+    height: 1rem;
+    width: 100%;
+    background: #fff;
+    padding:.2rem 0;
+    color: #333;
+    box-sizing:border-box;
+}
+.search .searchDiv{
+    position: relative;
+}
+.search .searchDiv span {
+    font-size: .26rem;
+    color: #999;
+    position: absolute;
+    top:0.2rem;
+    left:0.36rem;
+    z-index: 10;
+}
+
+.search .searchDiv input {
+    display: block;
+    height: .60rem;
+    width: 94%;
+    border: 1px solid #f7f7f7;
+    margin:0 auto;
+    background: #f7f7f7;
+    font-size: .28rem;
+    padding-left: .55rem;
+    border-radius: .10rem;
+    box-sizing: border-box;
+}
+
+.search .mask {
+    position: fixed;
+    top: 1.02rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 100;
+    max-width: 1024px;
+}
+
+.search .mask div {
+    width: auto;
+    padding: 0 .38rem;
+    height: 100%;
+    overflow: auto;
+}
+
+.search .mask div .searchLi {
+    height: .80rem;
+    line-height: .80rem;
+    font-size: .30rem;
+}

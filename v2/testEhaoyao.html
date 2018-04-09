@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/font.css"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+</head>
+<body>
+aaa
+<script src="https://assistant.rxthinking.com/v2/js/sdk.js"></script>
+<script>
+    (function(){
+        window._openRxthinking.init({
+            id:'',                      //必须，内嵌窗口id，默认‘rxthinking’
+            name:'',                    //必须，内嵌窗口name，默认同id || ‘rxthinking’
+            token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJhcHAiOnsiaWQiOiJtZXJjdXJ\n' +
+            '5IiwibmFtZSI6IuWlveiNr-W4iCJ9LCJzY29wZXMiOlsiYWkudjEuYXNzaXN0IiwiYWkudjEuYXNzaXN\n' +
+            '0YW50IiwiYWkudjEuZG9jdG9yIiwiYWkudjEudGV4dCIsImFpLnYxLmVudGl0eSJdfSwidXRjdGltZSI\n' +
+            '6IjIwMTctMTItMjJUMDE6MDY6MDcuMDA2MjczODg2WiIsInV0Y2V4cCI6IjIwMTctMTItMjlUMDE6MDY\n' +
+            '6MDcuMDA2MjczODg2WiJ9.Uwy-TAXojxNfao6oVNyqX-uPgh4w77s98LABXmGZJRne-t0Fx8-QVachxE\n' +
+            'hibRVUoXewp2TPt7Ix6_Qcuam6sSJ53VBPf4jHxI00VwIbm5FQyX4smm4NcasoSMNoGN4hkYIGDxy0Sx\n' +
+            'MXVg2UzH_IX8dzD0c4T-Y7PBE4ibxIyHZpEgWR-g2pPdcFJKju3HNOzShSUtln9W0KEd2TDkLso5Deu2\n' +
+            'n2jJqmIFY5iLfZOxpzP6RJfF2d3Q37hOILJB8DZN8UPKSibvvo724nF_Rj0NfRpq24FxjyH388XZI3_M\n' +
+            'tgnrdbmf5kIjOhjDGwhsjdNC51p_LubbWbVivdOuRDaA',              //必须，验证信息，必填
+            top: '30px',               //智能问诊窗口的位置，top
+            left: '30px',              //智能问诊窗口的位置，left
+            callback:function(data){    //回调函数，诊断结果data，结构见'3、返回数据的格式'
+                console.log(data);
+            }
+        });
+        window.addEventListener('message',function(e){
+            console.log(e.data);
+
+        },false);
+    })();
+
+</script>
+</body>
+</html>

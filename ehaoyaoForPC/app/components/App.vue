@@ -1,5 +1,5 @@
 <template>
-    <div class="content udf_scroller">
+    <div class="content udf_scroller" style="margin-top:30px;margin-left:40%;width:375px;">
         <global-loading />
         <router-view></router-view>
     </div>
@@ -23,7 +23,7 @@
         created() {
         },
         mounted() {
-            this.$store.dispatch('setLocationSearch')
+            this.$store.dispatch('setLocationSearch');
         },
         methods: {
             checkVersion() {
@@ -49,7 +49,7 @@
                 if(this.routeFlag){
                     if(to&&to.path&&to.path=='/symptoms'){
                         if(from&&from.path&&from.path=='/inquiry'){
-//                                console.log(window);
+//                                  console.log(window);
 //                                console.log(window.location);
 //                            console.log(this.symptoms.selected);
 //                            if(this.symptoms.selected.length>0){

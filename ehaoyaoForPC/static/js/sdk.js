@@ -9,6 +9,7 @@ var _openRxthinking = {
         if (this.haveIfr) {
             return;
         }
+        console.log(2222)
         var ifrId = params.id || 'rx_iframe',
             ifrName = params.name || params.id || 'rx_iframe',
             ifrW ='375px',

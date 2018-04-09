@@ -1,7 +1,7 @@
 module.exports = {
     // cfg: "http://192.168.100.40:8002",
-    cfg: "https://api.rxthinking.com",//本地测试版
-    // cfg: "/_",//本地测试版
+    // cfg: "https://api.rxthinking.com",//本地测试版
+    cfg: "/_",//本地测试版
     statisticCfg: 'https://api.rxthinking.com',
     statisticUrl: '/stats/v1/icon.png',
 

@@ -52,8 +52,8 @@
 }(window, {
 
     designWidth: 750,
-    // designHeight: 1134,
-    designFontSize: 100,
+    // designHeight: 100,
+    designFontSize: 40,
     callback: function(argument) {
         console.log(document.getElementsByTagName("html")[0].style.fontSize);
     }

@@ -39,6 +39,7 @@
             if (!this.$store.state.flagInquiry && this.$route.query.from) {
                 this.$router.push('inquiry')
             }
+
         },
         computed: {
             ...mapState(['options', 'optionType', 'showPicker']),

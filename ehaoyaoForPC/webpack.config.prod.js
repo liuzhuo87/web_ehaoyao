@@ -13,7 +13,7 @@ module.exports = {
     },
     output:{
         filename: '[name].js',
-        path: path.join(__dirname, '../dist/pc'),
+        path: path.join(__dirname, 'dist'),
     },
     resolve:{
         extensions:['.js','.css','.less','.vue'],

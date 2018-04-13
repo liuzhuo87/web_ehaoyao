@@ -1,5 +1,5 @@
 <template>
-    <div class="content udf_scroller" style="margin-left:40%;width:375px;">
+    <div class="content udf_scroller">
         <global-loading />
         <router-view></router-view>
     </div>

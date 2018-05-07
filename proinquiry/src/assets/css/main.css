@@ -1,0 +1,326 @@
+* {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+html, body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Open Sans", sans-serif; }
+
+.mask-body {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  opacity: .9;
+  display: none; }
+
+.mask-watting-for {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/bi-waittingfor.gif");
+  background-repeat: no-repeat;
+  z-index: 51;
+  position: absolute;
+  left: 48%;
+  top: 30%;
+  display: none; }
+
+#main {
+  position: relative;
+  margin: 12px; }
+  #main .title-container {
+    position: relative; }
+    #main .title-container .title-text {
+      font-size: 16px;
+      font-weight: bold; }
+    #main .title-container .title-button {
+      text-decoration: none;
+      color: #CE6E6D;
+      position: absolute; }
+      #main .title-container .title-button .title-button-text {
+        font-size: 16px;
+        display: inline-block; }
+    #main .title-container .title-button.clear {
+      top: 1px;
+      right: 10px; }
+      #main .title-container .title-button.clear svg, #main .title-container .title-button.clear img {
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        vertical-align: baseline;
+        outline: none;
+        border: none; }
+  #main .patient-summary {
+    line-height: 40px; }
+    #main .patient-summary .s-item {
+      display: inline-block;
+      padding-right: 10px; }
+  #main .textarea-block {
+    height: 48px;
+    border-bottom: 1px solid #BCC6CF;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px;
+    box-sizing: border-box; }
+    #main .textarea-block .main-content {
+      color: #666666;
+      margin: 0;
+      padding: 0;
+      word-break: break-all;
+      white-space: normal; }
+      #main .textarea-block .main-content .subject {
+        font-size: 14px;
+        font-weight: bold; }
+    #main .textarea-block .input-main-content {
+      border: none;
+      width: 100%;
+      height: 100%;
+      resize: none;
+      display: none;
+      overflow: hidden; }
+  #main #patientComplaint {
+    background-color: #FFFFFF; }
+  #main #historyOfPresentIllness {
+    background-color: #FFFFFF; }
+  #main #previousHistory {
+    background-color: #FFFFFF; }
+  #main #btnAsk {
+    display: block;
+    width: 94px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #228AE8;
+    text-decoration: none;
+    text-align: center;
+    margin: 12px auto 26px; }
+    #main #btnAsk svg, #main #btnAsk img {
+      display: inline-block;
+      vertical-align: middle;
+      outline: none;
+      border: none; }
+    #main #btnAsk .btn-ask-text {
+      display: inline-block;
+      color: #FFFFFF; }
+  #main #menuAddResult {
+    border-top: 4px solid #1B7DD2; }
+    #main #menuAddResult .resultTitle {
+      height: 35px;
+      line-height: 35px;
+      background: #e9f2fb;
+      padding: 0 10px;
+      color: #1B7DD2;
+      font-size: 14px;
+      position: relative; }
+      #main #menuAddResult .resultTitle .addDiseaseWrap {
+        width: 288px;
+        height: 35px;
+        line-height: 35px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: -290px; }
+        #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseInp {
+          border-bottom: 1px solid #c7c7c7;
+          position: relative; }
+          #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseInp input {
+            width: 88%;
+            height: 35px;
+            line-height: 35px;
+            font-size: 12px;
+            padding-left: 2%; }
+          #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseInp .close {
+            display: inline-block;
+            width: 7%;
+            text-align: center; }
+          #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseInp .placeh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #999;
+            width: 88%;
+            padding-left: 2%;
+            background: #fff; }
+        #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseSug {
+          display: none;
+          height: 283px;
+          width: 288px;
+          position: absolute;
+          top: 36px;
+          right: 0;
+          background: #fff;
+          color: #333;
+          z-index: 10;
+          overflow: auto; }
+          #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseSug li {
+            padding-left: 2%; }
+            #main #menuAddResult .resultTitle .addDiseaseWrap .addDiseaseSug li.null {
+              padding: 0;
+              line-height: 100px;
+              text-align: center; }
+      #main #menuAddResult .resultTitle img {
+        width: 16px;
+        height: 17px;
+        margin-top: 9px; }
+    #main #menuAddResult .addDiseaseBtn.disable {
+      color: #999; }
+
+#left {
+  width: 288px;
+  height: 582px;
+  border-right: 1px solid #D2D4D7;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  overflow: hidden; }
+  #left .btnRegimen {
+    width: 100%;
+    height: 39px;
+    line-height: 39px;
+    background: #41B975;
+    text-align: center;
+    color: #fff; }
+    #left .btnRegimen img {
+      width: 16px;
+      width: 19px;
+      margin: 7px 10px 0 78px; }
+  #left .predict-wrap {
+    height: 244px;
+    overflow: auto; }
+
+#right {
+  width: 285px; }
+  #right #rightMain .next-ask-item {
+    margin: 12px 5px; }
+    #right #rightMain .next-ask-item .question-options {
+      margin: 8px 0px; }
+      #right #rightMain .next-ask-item .question-options .question-item {
+        border: 1px solid #CAD2D9;
+        border-collapse: collapse;
+        display: inline-block;
+        min-width: 30%;
+        text-align: center;
+        cursor: pointer;
+        padding: 5px 2px;
+        background-color: #FFFFFF;
+        color: #666666;
+        margin-bottom: 8px; }
+      #right #rightMain .next-ask-item .question-options .question-item.active {
+        background-color: #87A1BA;
+        color: #FFFFFF; }
+      #right #rightMain .next-ask-item .question-options .ask-item-choice {
+        display: block;
+        margin: 5px 0;
+        cursor: pointer; }
+  #right #rightMain .rightTitle {
+    border-top: 4px solid #1B7DD2;
+    height: 40px;
+    line-height: 40px;
+    color: #1A97DE;
+    font-size: 16px;
+    background: #e5f0f7;
+    padding: 0 16px; }
+  #right #rightMain .listWrap {
+    height: 538px;
+    padding: 0 16px;
+    overflow: auto; }
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  width: 800px;
+  border-top: 1px solid #d8d8d8;
+  height: 40px; }
+  #bottom a {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #50C381;
+    padding-top: 8px; }
+    #bottom a svg, #bottom a img {
+      display: inline-block;
+      vertical-align: middle;
+      outline: none;
+      border: none; }
+    #bottom a span.link-text {
+      margin-left: 9px;
+      display: inline-block;
+      vertical-align: middle; }
+
+.bdmd-checker, .customDisease {
+  position: relative;
+  padding: 10px 10px 10px 32px;
+  border-bottom: 1px solid #E6E6E6; }
+  .bdmd-checker input[type='checkbox'], .customDisease input[type='checkbox'] {
+    position: absolute;
+    top: -5000px; }
+  .bdmd-checker .checkedOrder, .customDisease .checkedOrder {
+    display: none;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background: url(../images/order_bj.png) no-repeat;
+    overflow: hidden;
+    text-align: center;
+    color: #fff; }
+  .bdmd-checker label, .customDisease label {
+    max-width: 200px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 0px;
+    line-height: 18px;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 4px;
+    padding-top: 2px; }
+    .bdmd-checker label .checker-icon, .bdmd-checker label .checker-delete, .customDisease label .checker-icon, .customDisease label .checker-delete {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 12px;
+      top: 12px; }
+    .bdmd-checker label .checker-icon, .customDisease label .checker-icon {
+      background-repeat: no-repeat;
+      background-image: url("../images/32px.png"); }
+    .bdmd-checker label .checker-delete, .customDisease label .checker-delete {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #D0021B; }
+
+.bdmd-checker.unchecked .checker-icon {
+  background-position: -169px -8px; }
+
+.bdmd-checker.checked .checker-icon {
+  background-position: -233px -8px; }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #BFC5CB; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #BFC5CB; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #BFC5CB; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #BFC5CB; }

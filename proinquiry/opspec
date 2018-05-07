@@ -1,0 +1,35 @@
+-- vim: set ft=lua:
+-- Jarvis openlight spec file
+-- op: ruleVersion=v1
+-- 该文件定义了如下构建目标
+--
+--  dockerimage             前端镜像
+--
+
+build=require("build")
+
+pkg=build.package({
+    name="ehaoyao proinquiry",
+    author="chideat",
+    url="https://github.com/datamiller/web_ehaoyao",
+})
+
+pkg:options():set("defaultTargets", { "web" })
+
+--
+--  Target: dockerimage
+--  Docker镜像
+--
+
+dockerImageTarget=build.DockerImageTarget.new({repository="dockerdist.bdmd.com", image="ehaoyao-proinquiry", push=true})
+dockerImageTarget:description("Docker镜像")
+
+-- Basic config
+dockerImageTarget:from("dockerdist.bdmd.com/openweb:latest")
+dockerImageTarget:label("Name", "\"ehaoyao proinquiry\"")
+dockerImageTarget:label("Description", "\"ehaoyao proinquiry\"")
+-- Add files
+dockerImageTarget:add(build.File.new({filename="src"}), "/var/lib/rxthinking.com/ehaoyao-proinquiry/web")
+dockerImageTarget:add(build.File.new({filename="config"}), "/etc/rxthinking.com/ehaoyao-proinquiry")
+
+pkg:targets():add("dockerimage", dockerImageTarget)

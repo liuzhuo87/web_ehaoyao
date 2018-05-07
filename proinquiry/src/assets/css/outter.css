@@ -1,0 +1,32 @@
+* {
+  outline: none;
+  user-select: none; }
+
+html, body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0; }
+
+#askContainer {
+  width: 800px;
+  height: 630px;
+  border: 1px solid #C5C5C5;
+  margin: 15px auto auto;
+  box-shadow: 3px 3px 3px #C5C5C5; }
+  #askContainer .ask-header {
+    height: 30px;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #0089DB; }
+    #askContainer .ask-header svg, #askContainer .ask-header img {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      left: 8px; }
+    #askContainer .ask-header .ask-header-title {
+      font-size: 14px;
+      color: #FFFFFF;
+      display: inline-block;
+      margin-left: 12px; }
+  #askContainer iframe {
+    border: none; }

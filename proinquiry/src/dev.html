@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta charset="UTF-8">
+    <title>智能问诊工具</title>
+    <style>
+        #open{
+            display: inline-block;
+            padding: 0 10px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="askContainer">
+    <div id="open">打开</div>
+    <div class="ask-header">
+        <span class="ask-header-title">智能问诊助手</span>
+    </div>
+</div>
+<script src="/assets/js/lib/sdk.js"></script>
+<script>
+
+    var token = "1234";
+    var rxthinkingdata = '{"data":{"isMarriage":"未婚","age":"38","mainDiag":"鼻痒","sex":"男","illHistory":"","pastHistory":"","ypAllergic":""}}';
+    var open=document.getElementById('open');
+
+    open.onclick=function () {
+        _openRxthinking.init({
+            id:'rxthinking',
+            name:'rxthinking',
+            type:'dev',
+            token: '1234',              //验证信息，
+            sendData: rxthinkingdata,   //需要传递过去的数据
+            top: '30px',               //智能问诊窗口的位置，top
+            left: '30px',              //智能问诊窗口的位置，left
+            callback:function(data){    //回调函数，诊断结果data，结构见'3、返回数据的格式'
+                console.log(JSON.stringify(data));
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+session:
+  prefix: x-token-ehaoyao-proinquiry-
+web:
+  routes:
+  - path: /
+    protected: true
+    selfSign: true
+    routeMode: local
+    localRoute:
+      index: index.html
+      cache:
+        option: no-cache

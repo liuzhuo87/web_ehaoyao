@@ -295,19 +295,17 @@ View.prototype.GetPresentIllness = function () {
 }
 
 View.prototype.GetGender = function () {
-    if($(".s-item #pSex").val() == "男" || $(".s-item #pSex").val() == "女" || $(".s-item #pSex").val() == "未知" || $(".s-item #pSex").val() == ""){
-        return $(".s-item #pSex").val() || "";
-    }
-    else{
-        alert("请填入正确性别信息")
-    }
-    
+    return $(".s-item #pSex option:selected").val() || "";
 }
 
 View.prototype.GetAge = function () {
-    if(typeof parseInt($(".s-item #pAge").val()) == "number" || $(".s-item #pAge").val() == ""){
-        if($(".s-item #pAge").val() == "" || parseInt($(".s-item #pAge").val()) >= 0 && parseInt($(".s-item #pAge").val()) < 120){
-            return parseInt($(".s-item #pAge").val()) || 20;
+    if($(".s-item #pAge").val() == ""){
+        alert("请输入年龄");
+        return false;
+    }
+    else if(typeof parseInt($(".s-item #pAge").val()) == "number"){
+        if(parseInt($(".s-item #pAge").val()) >= 0 && parseInt($(".s-item #pAge").val()) < 120){
+            return parseInt($(".s-item #pAge").val()) || 30;
         }
         else{
             alert("请填入正确年龄")
@@ -585,7 +583,7 @@ API.prototype.Postmessage = function (data) {
 };
 
 window.rxthinking = window.rxthinking ? window.rxthinking : {};
-window.rxthinking.view = new View("男", "27岁");
+window.rxthinking.view = new View("男", "30岁");
 window.rxthinking.api = new API();
 
 
@@ -609,6 +607,7 @@ $(function () {
         $('.drugProjectWrap').hide();
         $('#tab').attr({'data-disabled': 1}).find('.helper').removeClass('disabled active').siblings('.inquiry').addClass('active');
         window.rxthinking.drug.init();
+        $(".s-item #pAge").attr("value",30);
     }
 
     $(".textarea-block").on("click", function (e) {

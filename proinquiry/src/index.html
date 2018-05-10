@@ -61,7 +61,14 @@
                         <div id="left" class="fll">
                             <div id="inputMain">
                                 <div class="patient-summary textarea-block" style="height: 44px;line-height: 38px">
-                                    <span class="s-item">性别：<input id="pSex"/></span>
+                                    <span class="s-item">性别：
+                                        <!-- <input id="pSex"/> -->
+                                        <select name="" id="pSex">
+                                            <option value="男">男</option>
+                                            <option value="女">女</option>
+                                            <option value="未知">未知</option>
+                                        </select>
+                                    </span>
                                     <span class="s-item">年龄：<input id="pAge"/>岁</span>
                                 </div>
                                 <div class="textarea-block" id="patientComplaint">

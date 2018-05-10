@@ -294,6 +294,31 @@ View.prototype.GetPresentIllness = function () {
     return $("#historyOfPresentIllness .input-main-content").val() || "";
 }
 
+View.prototype.GetGender = function () {
+    if($(".s-item #pSex").val() == "男" || $(".s-item #pSex").val() == "女" || $(".s-item #pSex").val() == "未知" || $(".s-item #pSex").val() == ""){
+        return $(".s-item #pSex").val() || "";
+    }
+    else{
+        alert("请填入正确性别信息")
+    }
+    
+}
+
+View.prototype.GetAge = function () {
+    if(typeof parseInt($(".s-item #pAge").val()) == "number" || $(".s-item #pAge").val() == ""){
+        if($(".s-item #pAge").val() == "" || parseInt($(".s-item #pAge").val()) >= 0 && parseInt($(".s-item #pAge").val()) < 120){
+            return parseInt($(".s-item #pAge").val()) || 20;
+        }
+        else{
+            alert("请填入正确年龄")
+        }
+    }
+    else{
+        alert("请填入正确年龄")
+    }
+    
+}
+
 View.prototype.UpdatePresentIllness = function (text) {
     var ret = "";
     (text || "").split(/[,，.。\s]/i).forEach(function (item) {
@@ -381,9 +406,9 @@ View.prototype.Serialize = function () {
             presentIllnessHistory: self.GetPresentIllness(),
             medicalHistory: self.GetPreviousHistory()
         },
-        gender: (this._gender == "男" ? "GenderMale" : (this._gender == "女" ? "GenderFemale" : "GenderUnknown")),
+        gender: (self.GetGender() == "男" ? "GenderMale" : (self.GetGender() == "女" ? "GenderFemale" : "GenderUnknown")),
         age: {
-            year: self._age
+            year: self.GetAge()
         }
         // symptoms: symptoms,
         // pastDiseases: pastDiseases

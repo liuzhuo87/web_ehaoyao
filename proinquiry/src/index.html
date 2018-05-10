@@ -17,280 +17,288 @@
 <script type="text/javascript" src="/assets/js/biz/main.js"></script>
 <script type="text/javascript" src="/assets/js/biz/Drug.js"></script>
 <script type="text/javascript" src="/assets/js/biz/main_v2.js"></script>
+<style>
+    .container{
+        margin: 0 auto;
+    }
+</style>
 
 <body>
-<div id="title" class="clearfix">
-    <div class="left fll">
-        <div class="img-wrap fll">
-            <img src="/assets/images/title_icon.png" alt="">
-        </div>
-        <div class="fll pageTitle">
-            智能问诊导航
-        </div>
-    </div>
-    <div class="right close closeWin flr cursor-p">
-        <img src="/assets/images/title_close.png" alt="">
-    </div>
-</div>
-<div id="main" style="display: block">
-    <!--问诊tab-->
-    <div id="tab">
-        <ul class="clearfix">
-            <li class="fll cursor-p inquiry active">
-                <span>智能问诊</span>
-                <div class="line"></div>
-            </li>
-            <li class="fll cursor-p helper">
-                <span>用药助手</span>
-                <div class="line"></div>
-            </li>
-        </ul>
-    </div>
-
-    <!--智能问诊-->
-    <div class="clearfix" id="inquiryBox" style="display: block;">
-
-        <!--问诊-->
-        <div class="inquiryWrap" style="display: block;">
-            <div id="left" class="fll">
-                <div id="inputMain">
-                    <div class="patient-summary textarea-block" style="height: 44px;line-height: 38px">
-                        <span class="s-item">性别：<span id="pSex"></span></span>
-                        <span class="s-item">年龄：<span id="pAge"></span>岁</span>
+    <div class="container">
+        <div id="title" class="clearfix">
+                <div class="left fll">
+                    <div class="img-wrap fll">
+                        <img src="/assets/images/title_icon.png" alt="">
                     </div>
-                    <div class="textarea-block" id="patientComplaint">
-                        <p class="main-content">
-                            <span class="subject">主诉：</span> <span class="detail"></span>
-                        </p>
-                        <textarea class="input-main-content" rows="3"></textarea>
+                    <div class="fll pageTitle">
+                        智能问诊导航
                     </div>
-                    <div class="textarea-block" id="historyOfPresentIllness">
-                        <p class="main-content">
-                            <span class="subject">现病史：</span> <span class="detail"></span>
-                        </p>
-                        <textarea class="input-main-content" rows="3"></textarea>
-                    </div>
-                    <div class="textarea-block" id="previousHistory">
-                        <p class="main-content">
-                            <span class="subject">既往史：</span> <span class="detail"></span>
-                        </p>
-                        <textarea class="input-main-content" rows="3"></textarea>
-                    </div>
-                    <a id="btnAsk" href="javascript:void (0)">
-                        <span class="btn-ask-text">获取诊断</span>
-                    </a>
                 </div>
-
-                <div id="menuAddResult">
-                    <div class="resultTitle clearfix">
-                        <div class="fll">
-                            <img src="/assets/images/result.png" class="fll">
-                            <div class="title-text fll">疾病预测</div>
-                        </div>
-                        <div class="flr cursor-p addDiseaseBtn">
-                            添加疾病
-                        </div>
-                        <div class="addDiseaseWrap">
-                            <div class="addDiseaseInp clearfix">
-                                <input type="text" value="" class="fll">
-                                <div class="placeh">请输入疾病名称</div>
-                                <span class="close cursor-p flr">x</span>
-                            </div>
-                            <ul class="addDiseaseSug">
-                                <li class="null">搜索结果为空</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="resultMain">
-                        <div class="predict-wrap">
-                            <div id="diseasePredict">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btnRegimen clearfix cursor-p">
-                        <img src="/assets/images/regimen.png" class="fll">
-                        <span class="fll">获取用药方案</span>
-                    </div>
+                <div class="right close closeWin flr cursor-p">
+                    <img src="/assets/images/title_close.png" alt="">
                 </div>
             </div>
-
-            <div id="right" class="flr">
-                <div id="rightMain">
-                    <div class="title-container rightTitle">
-                        <div class="title-text">智能追问</div>
-                    </div>
-                    <div class="listWrap">
-                        <div id="nextAskContainer"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--选择用药方案-->
-        <div class="drugProjectWrap" style="display: none">
-            <div class="drugProject">
-                <div class="cont" style="margin: 20px;">
-                    <div class="searchWrap">
-                        <input type="text" class="fll" value="" style="width: 78%;">
-                        <div class="inpText ell" style="width: 78%;">您可以搜索药品名称</div>
-                        <div class="searchBtn flr cursor-p disabled">添加</div>
-                        <ul class="suggestions inquirySuggestions"></ul>
-                    </div>
-                    <div class="projectListWrap drugProjectListWrap">
-                    </div>
-
-                </div>
-            </div>
-            <!--生成处方-->
-            <div class="createDrugProject cursor-p">
-                预览
-            </div>
-        </div>
-
-    </div>
-
-    <!--用药助手-->
-    <div id="drugHelper" style="display: none">
-        <div class="drugHelperCont">
-            <div style="height:482px;margin: 20px; ">
-
-                <!--搜索框-->
-                <div class="searchWrap clearfix">
-                    <div class="select fll">
-                        <select>
-                            <option value="EntityTypeDisease">疾病</option>
-                            <option value="EntityTypeSymptom">症状</option>
-                            <option value="EntityTypeDrugProduct">药品</option>
-                        </select>
-                    </div>
-                    <input type="text" class="fll" value="">
-                    <div class="inpText ell" style="left: 11%;">您可以搜索症状／疾病／药品</div>
-                    <div class="searchBtn flr cursor-p">搜索</div>
-                </div>
-
-                <div class="drugListWrap " style="height: 466px">
-                    <div class="selectedDrugWrap clearfix">
-                        <div class="fll" style="margin-right: 10px;margin-top: 10px;">已选药品：</div>
-                        <div class="selectedDrugListWrap fll" style="width: 440px">
-                        </div>
-
-                    </div>
-
-                    <ul class="searchResultList drugHelperSearchResultList">
+            <div id="main" style="display: block">
+                <!--问诊tab-->
+                <div id="tab">
+                    <ul class="clearfix">
+                        <li class="fll cursor-p inquiry active">
+                            <span>智能问诊</span>
+                            <div class="line"></div>
+                        </li>
+                        <li class="fll cursor-p helper">
+                            <span>用药助手</span>
+                            <div class="line"></div>
+                        </li>
                     </ul>
                 </div>
-
-            </div>
-        </div>
-        <!--生成处方-->
-        <div class="helperCreateDrug cursor-p">预览</div>
-    </div>
-
-</div>
-
-<!--处方-->
-<div id="recipe" style="display: none;">
-    <div class="recipeContWrap">
-
-        <div class="recipeCont">
-            <div class="patientType clearfix">
-                <div class="name fll">
-                    费别：
-                </div>
-                <div class="opt fll gf">
-                    <span class="check-icon fll"></span>
-                    <span class="fll">公费</span>
-
-                </div>
-                <div class="opt fll zf">
-                    <span class="check-icon fll"></span>
-                    <span class="fll">自费</span>
-                </div>
-                <div class="opt fll yb">
-                    <span class="check-icon fll"></span>
-                    <span class="fll">医保</span>
-                </div>
-                <div class="opt fll qt">
-                    <span class="check-icon fll "></span>
-                    <span class="fll">其他</span>
-                </div>
-                <div class="patientResult fll">
-                    <!--公费病人-->
-                </div>
-            </div>
-            <div class="patientInfo">
-                <div class="row1 clearfix">
-                    <div class="name fll item">
-                        <div class="fll key">姓名 ：</div>
-                        <div class="fll val"></div>
-                    </div>
-                    <div class="gender fll item">
-                        <div class="fll key">性别 ：</div>
-                        <div class="fll val">
-                            <span class="check-icon fll male "></span>
-                            <span class="fll">男</span>
-                            <span class="check-icon fll female"></span>
-                            <span class="fll">女</span>
+            
+                <!--智能问诊-->
+                <div class="clearfix" id="inquiryBox" style="display: block;">
+            
+                    <!--问诊-->
+                    <div class="inquiryWrap" style="display: block;">
+                        <div id="left" class="fll">
+                            <div id="inputMain">
+                                <div class="patient-summary textarea-block" style="height: 44px;line-height: 38px">
+                                    <span class="s-item">性别：<input id="pSex"/></span>
+                                    <span class="s-item">年龄：<input id="pAge"/>岁</span>
+                                </div>
+                                <div class="textarea-block" id="patientComplaint">
+                                    <p class="main-content">
+                                        <span class="subject">主诉：</span> <span class="detail"></span>
+                                    </p>
+                                    <textarea class="input-main-content" rows="3"></textarea>
+                                </div>
+                                <div class="textarea-block" id="historyOfPresentIllness">
+                                    <p class="main-content">
+                                        <span class="subject">现病史：</span> <span class="detail"></span>
+                                    </p>
+                                    <textarea class="input-main-content" rows="3"></textarea>
+                                </div>
+                                <div class="textarea-block" id="previousHistory">
+                                    <p class="main-content">
+                                        <span class="subject">既往史：</span> <span class="detail"></span>
+                                    </p>
+                                    <textarea class="input-main-content" rows="3"></textarea>
+                                </div>
+                                <a id="btnAsk" href="javascript:void (0)">
+                                    <span class="btn-ask-text">获取诊断</span>
+                                </a>
+                            </div>
+            
+                            <div id="menuAddResult">
+                                <div class="resultTitle clearfix">
+                                    <div class="fll">
+                                        <img src="/assets/images/result.png" class="fll">
+                                        <div class="title-text fll">疾病预测</div>
+                                    </div>
+                                    <div class="flr cursor-p addDiseaseBtn">
+                                        添加疾病
+                                    </div>
+                                    <div class="addDiseaseWrap">
+                                        <div class="addDiseaseInp clearfix">
+                                            <input type="text" value="" class="fll">
+                                            <div class="placeh">请输入疾病名称</div>
+                                            <span class="close cursor-p flr">x</span>
+                                        </div>
+                                        <ul class="addDiseaseSug">
+                                            <li class="null">搜索结果为空</li>
+                                        </ul>
+                                    </div>
+            
+                                </div>
+                                <div class="resultMain">
+                                    <div class="predict-wrap">
+                                        <div id="diseasePredict">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btnRegimen clearfix cursor-p">
+                                    <img src="/assets/images/regimen.png" class="fll">
+                                    <span class="fll">获取用药方案</span>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div id="right" class="flr">
+                            <div id="rightMain">
+                                <div class="title-container rightTitle">
+                                    <div class="title-text">智能追问</div>
+                                </div>
+                                <div class="listWrap">
+                                    <div id="nextAskContainer"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="age fll item">
-                        <div class="fll key">年龄 ：</div>
-                        <div class="fll val"></div>
+            
+                    <!--选择用药方案-->
+                    <div class="drugProjectWrap" style="display: none">
+                        <div class="drugProject">
+                            <div class="cont" style="margin: 20px;">
+                                <div class="searchWrap">
+                                    <input type="text" class="fll" value="" style="width: 78%;">
+                                    <div class="inpText ell" style="width: 78%;">您可以搜索药品名称</div>
+                                    <div class="searchBtn flr cursor-p disabled">添加</div>
+                                    <ul class="suggestions inquirySuggestions"></ul>
+                                </div>
+                                <div class="projectListWrap drugProjectListWrap">
+                                </div>
+            
+                            </div>
+                        </div>
+                        <!--生成处方-->
+                        <div class="createDrugProject cursor-p">
+                            预览
+                        </div>
                     </div>
+            
                 </div>
-                <div class="row2 clearfix">
-                    <div class="outpatientNum fll item">
-                        <div class="fll key">门诊／住院病历号 ：</div>
-                        <div class="fll val"></div>
+            
+                <!--用药助手-->
+                <div id="drugHelper" style="display: none">
+                    <div class="drugHelperCont">
+                        <div style="height:482px;margin: 20px; ">
+            
+                            <!--搜索框-->
+                            <div class="searchWrap clearfix">
+                                <div class="select fll">
+                                    <select>
+                                        <option value="EntityTypeDisease">疾病</option>
+                                        <option value="EntityTypeSymptom">症状</option>
+                                        <option value="EntityTypeDrugProduct">药品</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="fll" value="">
+                                <div class="inpText ell" style="left: 11%;">您可以搜索症状／疾病／药品</div>
+                                <div class="searchBtn flr cursor-p">搜索</div>
+                            </div>
+            
+                            <div class="drugListWrap " style="height: 466px">
+                                <div class="selectedDrugWrap clearfix">
+                                    <div class="fll" style="margin-right: 10px;margin-top: 10px;">已选药品：</div>
+                                    <div class="selectedDrugListWrap fll" style="width: 440px">
+                                    </div>
+            
+                                </div>
+            
+                                <ul class="searchResultList drugHelperSearchResultList">
+                                </ul>
+                            </div>
+            
+                        </div>
                     </div>
-                    <div class="bedsNum fll item">
-                        <div class="fll key">科别（病区／床位号）：</div>
-                        <div class="fll val"></div>
-                    </div>
+                    <!--生成处方-->
+                    <div class="helperCreateDrug cursor-p">预览</div>
                 </div>
-                <div class="row3 clearfix">
-                    <div class="outpatientNum fll item createTime">
-                        <div class="fll key">开具时间 ：</div>
-                        <div class="fll val"></div>
-                    </div>
-                    <div class="bedsNum fll item">
-                        <div class="fll key">住址电话 ：</div>
-                        <div class="fll val"></div>
-                    </div>
-                </div>
+            
             </div>
-            <div class="diseaseResult recipeDiseaseResult">
-                <div class="title">临床诊断</div>
-                <ul>
-                </ul>
-            </div>
-            <div class="drugResult">
-                <div class="title clearfix">
-                    <div class="left fll">Rp</div>
-                    <div class="right flr cursor-p editDrugResult">
-                        <img src="/assets/images/edit_icon.png" alt="">
-                        <span class="text">编辑</span>
+            
+            <!--处方-->
+            <div id="recipe" style="display: none;">
+                <div class="recipeContWrap">
+            
+                    <div class="recipeCont">
+                        <div class="patientType clearfix">
+                            <div class="name fll">
+                                费别：
+                            </div>
+                            <div class="opt fll gf">
+                                <span class="check-icon fll"></span>
+                                <span class="fll">公费</span>
+            
+                            </div>
+                            <div class="opt fll zf">
+                                <span class="check-icon fll"></span>
+                                <span class="fll">自费</span>
+                            </div>
+                            <div class="opt fll yb">
+                                <span class="check-icon fll"></span>
+                                <span class="fll">医保</span>
+                            </div>
+                            <div class="opt fll qt">
+                                <span class="check-icon fll "></span>
+                                <span class="fll">其他</span>
+                            </div>
+                            <div class="patientResult fll">
+                                <!--公费病人-->
+                            </div>
+                        </div>
+                        <div class="patientInfo">
+                            <div class="row1 clearfix">
+                                <div class="name fll item">
+                                    <div class="fll key">姓名 ：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                                <div class="gender fll item">
+                                    <div class="fll key">性别 ：</div>
+                                    <div class="fll val">
+                                        <span class="check-icon fll male "></span>
+                                        <span class="fll">男</span>
+                                        <span class="check-icon fll female"></span>
+                                        <span class="fll">女</span>
+                                    </div>
+                                </div>
+                                <div class="age fll item">
+                                    <div class="fll key">年龄 ：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                            </div>
+                            <div class="row2 clearfix">
+                                <div class="outpatientNum fll item">
+                                    <div class="fll key">门诊／住院病历号 ：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                                <div class="bedsNum fll item">
+                                    <div class="fll key">科别（病区／床位号）：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                            </div>
+                            <div class="row3 clearfix">
+                                <div class="outpatientNum fll item createTime">
+                                    <div class="fll key">开具时间 ：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                                <div class="bedsNum fll item">
+                                    <div class="fll key">住址电话 ：</div>
+                                    <div class="fll val"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diseaseResult recipeDiseaseResult">
+                            <div class="title">临床诊断</div>
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="drugResult">
+                            <div class="title clearfix">
+                                <div class="left fll">Rp</div>
+                                <div class="right flr cursor-p editDrugResult">
+                                    <img src="/assets/images/edit_icon.png" alt="">
+                                    <span class="text">编辑</span>
+                                </div>
+                            </div>
+                            <ul class="resultCont">
+            
+                                <!--显示处方-->
+                                <div class="resultListWrap recipeDrugResultList" style="display: block">
+                                </div>
+            
+                                <!--编辑处方-->
+                                <div class="editResultWrap recipeDrugResultEdit" style="display: none">
+                                </div>
+            
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <ul class="resultCont">
-
-                    <!--显示处方-->
-                    <div class="resultListWrap recipeDrugResultList" style="display: block">
-                    </div>
-
-                    <!--编辑处方-->
-                    <div class="editResultWrap recipeDrugResultEdit" style="display: none">
-                    </div>
-
-                </ul>
+            
+                <div id="submitData" class="cursor-p sureBtn" style="display: block;">提交</div>
+                <div id="sureEdit" class="cursor-p sureBtn" style="display: none">完成</div>
             </div>
-        </div>
     </div>
 
-    <div id="submitData" class="cursor-p sureBtn" style="display: block;">提交</div>
-    <div id="sureEdit" class="cursor-p sureBtn" style="display: none">完成</div>
-</div>
 
 <div class="mask-body"></div>
 <div class="mask-watting-for"></div>

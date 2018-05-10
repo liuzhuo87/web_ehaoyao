@@ -1,4 +1,5 @@
 html, body {
+  margin: 0 auto;
   width: 600px;
   height: 678px;
   -ms-box-sizing: border-box;

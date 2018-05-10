@@ -65,6 +65,12 @@ html, body {
     #main .patient-summary .s-item {
       display: inline-block;
       padding-right: 10px; }
+  .s-item #pSex{
+    width: 26px
+  }
+  .s-item #pAge{
+    width: 26px
+  }
   #main .textarea-block {
     height: 48px;
     border-bottom: 1px solid #BCC6CF;
